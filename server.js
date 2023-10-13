@@ -90,13 +90,13 @@ app.get("/orderid", (req, res) => {
   res.json({ orderID });
 })
 // Define a prefix and suffix for your order IDs.
-const prefix = 'Order';
-const suffix = 'GH';
-// Example usage:
-let lastOrderId = undefined; // Initialize with undefined to create the first order ID
-// let lastOrderId = 'ORDER-000000001-suffix';  // Set to the last order ID if available
-// Generate an order ID
-const orderID = generateOrderID(prefix, lastOrderId, suffix);
+// const prefix = 'Order';
+// const suffix = 'GH';
+// // Example usage:
+// let lastOrderId = undefined; // Initialize with undefined to create the first order ID
+// // let lastOrderId = 'ORDER-000000001-suffix';  // Set to the last order ID if available
+// // Generate an order ID
+// const orderID = generateOrderID(prefix, lastOrderId, suffix);
 // console.log(orderID);
 
 
