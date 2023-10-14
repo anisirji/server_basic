@@ -22,6 +22,6 @@ function generateOrderID(lastOrderId, prefix, suffix = "") {
 
 console.log(generateOrderID(undefined, "ORDER-"));
 console.log(generateOrderID(undefined, "ORDER-", "-Prefix"));
-console.log(generateOrderID("ORDER-00001-SOMETHING", "ORDER-"));
+console.log(generateOrderID("ORDER-00001-SOMETHING"));
 
 module.exports = { generateOrderID };
