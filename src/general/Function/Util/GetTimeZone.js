@@ -1,60 +1,42 @@
-
-
-// 2) get Current Date Time  // "2023-10-11 09:56:34"
-// 3) Current  Time //"09:57:34"
-// 4) Current Date // "2023-10-11"
-// 5) Current Year //"2023'
-
-function getCurrentYear() {
-    const currentDate = new Date();
-    const year = currentDate.getFullYear();
-
-    // Create a formatted string for the date
-    const formattedYear = `${year}`;
-    return formattedYear;
+function formatDate(date) {
+  const year = date.getFullYear();
+  const month = date.getMonth() + 1;
+  const day = date.getDate();
+  return `${year}-${month}-${day}`;
 }
 
+function formatTime(date) {
+  const hours = date.getHours();
+  const minutes = date.getMinutes();
+  const seconds = date.getSeconds();
+  return `${hours}:${minutes}:${seconds}`;
+}
 
 function getCurrentDate() {
-    const currentDate = new Date();
-    const year = currentDate.getFullYear();
-    const month = currentDate.getMonth() + 1; // Months are zero-indexed, so add 1
-    const day = currentDate.getDate();
+  const currentDate = new Date();
+  return formatDate(currentDate);
+}
 
-    // Create a formatted string for the date
-    const formattedDate = `${year}-${month}-${day}`;
-    return formattedDate;
-
+function getCurrentTime() {
+  const currentDate = new Date();
+  return formatTime(currentDate);
 }
 
 function getCurrentDateTime() {
-
-    const currentDate = new Date();
-
-    const year = currentDate.getFullYear();
-    const month = currentDate.getMonth() + 1; // Months are zero-indexed, so add 1
-    const day = currentDate.getDate();
-    const hours = currentDate.getHours();
-    const minutes = currentDate.getMinutes();
-    const seconds = currentDate.getSeconds();
-
-    const formattedDateTime = `${year}-${month}-${day} ${hours}:${minutes}:${seconds}`;
-
-    return formattedDateTime
-
-}
-function getCurrentTime() {
-    const currentDate = new Date();
-    const hours = currentDate.getHours();
-    const minutes = currentDate.getMinutes();
-    const seconds = currentDate.getSeconds();
-
-    // Create a formatted string for the time
-    const formattedTime = `${hours}:${minutes}:${seconds}`;
-    return formattedTime;
+  const currentDate = new Date();
+  const formattedDate = formatDate(currentDate);
+  const formattedTime = formatTime(currentDate);
+  return `${formattedDate} ${formattedTime}`;
 }
 
-// console.log(getCurrentDate(), getCurrentDateTime(), getCurrentTime(), getCurrentYear());
+function getCurrentYear() {
+  const currentDate = new Date();
+  return currentDate.getFullYear().toString();
+}
 
-module.exports = { getCurrentYear, getCurrentDate, getCurrentTime, getCurrentDateTime };
-
+module.exports = {
+  getCurrentYear,
+  getCurrentDate,
+  getCurrentTime,
+  getCurrentDateTime,
+};
